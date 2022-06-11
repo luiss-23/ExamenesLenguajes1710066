@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.6.21"
+    id("org.jetbrains.kotlinx.kover") version "0.5.0"
 }
 
 group = "org.example"

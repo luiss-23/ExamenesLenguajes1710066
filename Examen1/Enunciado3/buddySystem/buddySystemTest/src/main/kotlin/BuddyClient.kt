@@ -1,3 +1,7 @@
+/* 
+ * Funcion que retorna true si un string dado se puede llevar a entero, 
+ * false en caso contrario.
+ */
 fun isNumber(s: String): Boolean {
     return when(s.toIntOrNull())
     {
@@ -6,6 +10,9 @@ fun isNumber(s: String): Boolean {
     }
 }
 
+/* 
+ * Cliente que simulara el buddy system implementado en BuddySystem.kt
+ */
 fun main(args: Array<String>) {
     if (args.size != 1) {
         println("Se debe introducir un solo argumento como entrada. La línea de comando debe ser:")

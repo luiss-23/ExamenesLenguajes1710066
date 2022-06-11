@@ -1,0 +1,17 @@
+{
+  "reports": [ 
+        {"ic": "/Users/luiscarlosblanco/Documents/lenguajesI/parciales/examen1/ExamenesLenguajes1710066/Examen1/Enunciado3/buddySystem/buddySystemTest/build/kover/test.ic"}
+    ], 
+  "html": "/Users/luiscarlosblanco/Documents/lenguajesI/parciales/examen1/ExamenesLenguajes1710066/Examen1/Enunciado3/buddySystem/buddySystemTest/build/reports/kover/project-html",
+  "modules": [
+    {
+      "output": [
+        "/Users/luiscarlosblanco/Documents/lenguajesI/parciales/examen1/ExamenesLenguajes1710066/Examen1/Enunciado3/buddySystem/buddySystemTest/build/classes/kotlin/main"
+      ],
+      "sources": [
+        "/Users/luiscarlosblanco/Documents/lenguajesI/parciales/examen1/ExamenesLenguajes1710066/Examen1/Enunciado3/buddySystem/buddySystemTest/src/main/kotlin",
+        "/Users/luiscarlosblanco/Documents/lenguajesI/parciales/examen1/ExamenesLenguajes1710066/Examen1/Enunciado3/buddySystem/buddySystemTest/src/main/resources"
+      ]
+    }
+  ]
+}

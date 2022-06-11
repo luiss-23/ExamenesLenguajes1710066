@@ -1,0 +1,328 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Bloque</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">&lt;empty package name&gt;</a>
+</div>
+
+<h1>Coverage Summary for Class: Bloque (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">Bloque</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    80%
+  </span>
+  <span class="absValue">
+    (4/5)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    88.9%
+  </span>
+  <span class="absValue">
+    (8/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    85%
+  </span>
+  <span class="absValue">
+    (91/107)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;/* 
+<i class="no-highlight">2</i>&nbsp; * Implementacion del BuddySystem
+<i class="no-highlight">3</i>&nbsp; * Autor: Luis Carlos Blanco
+<i class="no-highlight">4</i>&nbsp; * Carné: 17-10066
+<i class="no-highlight">5</i>&nbsp; */
+<i class="no-highlight">6</i>&nbsp;
+<i class="no-highlight">7</i>&nbsp;import kotlin.math.*
+<i class="no-highlight">8</i>&nbsp;
+<i class="no-highlight">9</i>&nbsp;/*
+<i class="no-highlight">10</i>&nbsp; * Clase Bloque que va a definir un objeto de tipo Bloque, el cual sera util para la implementacion
+<i class="no-highlight">11</i>&nbsp; * del buddy system, tambien se implementa algunas operaciones sobre bloques.
+<i class="no-highlight">12</i>&nbsp; */
+<b class="fc"><i class="no-highlight">13</i>&nbsp;public class Bloque(val i: Int, val f: Int) {</b>
+<i class="no-highlight">14</i>&nbsp;    /* Variables:
+<i class="no-highlight">15</i>&nbsp;     * capacidad: nos dira cual es la capacidad que tiene un bloque que tiene un bloque con direccion
+<i class="no-highlight">16</i>&nbsp;     * inicial y final i y j respectivamente.
+<i class="no-highlight">17</i>&nbsp;     * direcciones: par que contendra las direcciones inicial y fional de un obejto de tipo Bloque.
+<i class="no-highlight">18</i>&nbsp;     */
+<b class="fc"><i class="no-highlight">19</i>&nbsp;    var direcciones: Pair&lt;Int, Int&gt; = Pair(i, f)</b>
+<b class="fc"><i class="no-highlight">20</i>&nbsp;    var capacidad: Int = f - i + 1</b>
+<i class="no-highlight">21</i>&nbsp;
+<i class="no-highlight">22</i>&nbsp;    /* 
+<i class="no-highlight">23</i>&nbsp;     * Funcion direccionInicial que nos devolvera la direccion inicial de un bloque
+<i class="no-highlight">24</i>&nbsp;     */
+<i class="no-highlight">25</i>&nbsp;    fun direccionInicial() : Int {
+<b class="fc"><i class="no-highlight">26</i>&nbsp;        return direcciones.first</b>
+<i class="no-highlight">27</i>&nbsp;    }
+<i class="no-highlight">28</i>&nbsp;
+<i class="no-highlight">29</i>&nbsp;    /* 
+<i class="no-highlight">30</i>&nbsp;     * Funcion direccionFinal que nos devolvera la direccion final de un bloque
+<i class="no-highlight">31</i>&nbsp;     */
+<i class="no-highlight">32</i>&nbsp;    fun direccionFinal() : Int {
+<b class="fc"><i class="no-highlight">33</i>&nbsp;        return direcciones.second</b>
+<i class="no-highlight">34</i>&nbsp;    }
+<i class="no-highlight">35</i>&nbsp;
+<i class="no-highlight">36</i>&nbsp;    /* 
+<i class="no-highlight">37</i>&nbsp;     * Funcion divisionBloque que dado un bloque nos devolvera un par con dos bloques que resultaron de la 
+<i class="no-highlight">38</i>&nbsp;     * division del bloque con el que se llama a la funcion.
+<i class="no-highlight">39</i>&nbsp;     */
+<i class="no-highlight">40</i>&nbsp;    fun divisionBloque() : Pair&lt;Bloque, Bloque&gt; {
+<b class="fc"><i class="no-highlight">41</i>&nbsp;        var direccionI: Int = direccionInicial() + ((direccionFinal() - direccionInicial()) / 2)</b>
+<b class="fc"><i class="no-highlight">42</i>&nbsp;        var direccionF: Int = direccionInicial() + ((direccionFinal() - direccionInicial() + 1) / 2)</b>
+<i class="no-highlight">43</i>&nbsp;
+<b class="fc"><i class="no-highlight">44</i>&nbsp;        return Pair(Bloque(direccionInicial(), direccionI), Bloque(direccionF, direccionFinal()))</b>
+<i class="no-highlight">45</i>&nbsp;    }
+<i class="no-highlight">46</i>&nbsp;
+<i class="no-highlight">47</i>&nbsp;    /* 
+<i class="no-highlight">48</i>&nbsp;     * Sobrecarga de la funcion toString() para mostra como string un elemento de tipo bloque.
+<i class="no-highlight">49</i>&nbsp;     */
+<i class="no-highlight">50</i>&nbsp;    override fun toString() : String {
+<b class="nc"><i class="no-highlight">51</i>&nbsp;        return &quot;[dI: ${i}, dF: ${f}]&quot;</b>
+<i class="no-highlight">52</i>&nbsp;    }
+<i class="no-highlight">53</i>&nbsp;}
+<i class="no-highlight">54</i>&nbsp;
+<i class="no-highlight">55</i>&nbsp;/* 
+<i class="no-highlight">56</i>&nbsp; * Funcion log2 que recibe un entero y nos devuelve el logaritmo en base 2 de dicho
+<i class="no-highlight">57</i>&nbsp; * entero
+<i class="no-highlight">58</i>&nbsp; */
+<i class="no-highlight">59</i>&nbsp;fun log2(n: Int): Double {
+<i class="no-highlight">60</i>&nbsp;    return ln(n.toDouble()) / ln(2.0)
+<i class="no-highlight">61</i>&nbsp;}
+<i class="no-highlight">62</i>&nbsp;
+<i class="no-highlight">63</i>&nbsp;
+<i class="no-highlight">64</i>&nbsp;/*
+<i class="no-highlight">65</i>&nbsp; * Clase BuddySystem que implementara el sistema buddy system para almacenar datos dado un numero
+<i class="no-highlight">66</i>&nbsp; * de bloques.
+<i class="no-highlight">67</i>&nbsp; */
+<i class="no-highlight">68</i>&nbsp;public class BuddySystem(val bloques: Int) {
+<i class="no-highlight">69</i>&nbsp;    /* Variables:
+<i class="no-highlight">70</i>&nbsp;     * bloqueOcupados: Diccionario que llevara los bloques ocupados del sistema junto con su valor asociado.
+<i class="no-highlight">71</i>&nbsp;     * numeroDeBloques: Entero que almacenara la cantidad de bloques que manejara el sistema.
+<i class="no-highlight">72</i>&nbsp;     * memoriaLibre: lista de listas que contendra los bloques que aun no han sido ocupados.
+<i class="no-highlight">73</i>&nbsp;     */
+<i class="no-highlight">74</i>&nbsp;    var bloquesOcupados: MutableMap&lt;String, Bloque&gt; = mutableMapOf()
+<i class="no-highlight">75</i>&nbsp;    var numeroDeBloques: Int = floor(log2(bloques)).toInt()
+<i class="no-highlight">76</i>&nbsp;    var memoriaLibre: MutableList&lt;MutableList&lt;Bloque&gt;&gt; = MutableList(numeroDeBloques+1) { mutableListOf() }
+<i class="no-highlight">77</i>&nbsp;        
+<i class="no-highlight">78</i>&nbsp;    init {
+<i class="no-highlight">79</i>&nbsp;        var basePotencia: Double = 2.0
+<i class="no-highlight">80</i>&nbsp;        var potencia = basePotencia.pow(numeroDeBloques) - 1
+<i class="no-highlight">81</i>&nbsp;        memoriaLibre[memoriaLibre.size - 1].add(Bloque(0, potencia.toInt()))
+<i class="no-highlight">82</i>&nbsp;    }
+<i class="no-highlight">83</i>&nbsp;
+<i class="no-highlight">84</i>&nbsp;    /* 
+<i class="no-highlight">85</i>&nbsp;     * Funcion que se encargara de reservar un espacio en el sistema para almacenar el bloque 
+<i class="no-highlight">86</i>&nbsp;     * nombre y se especifica la cantidad de memoria que requiere el bloque.
+<i class="no-highlight">87</i>&nbsp;     * En primer lugar se ubica el bloque libre en el que se puede almacenar el bloque dado,
+<i class="no-highlight">88</i>&nbsp;     * en caso de que no haya bloques libres en la ubicacion que corresponde, se procede a buscar 
+<i class="no-highlight">89</i>&nbsp;     * un bloque libre cuyo tamanio sea mayor que el tamanio requerido. En caso que no se consigan 
+<i class="no-highlight">90</i>&nbsp;     * bloques disponibles para la cantidad de memoria requerida, entonces no se puede agregar el elemento.
+<i class="no-highlight">91</i>&nbsp;     */
+<i class="no-highlight">92</i>&nbsp;    fun reservarEspacio(nombre: String, cantidad: Int) : String {
+<i class="no-highlight">93</i>&nbsp;        if (bloquesOcupados.contains(nombre)) {
+<i class="no-highlight">94</i>&nbsp;            return &quot;${nombre} ya ha sido reservado.&quot;
+<i class="no-highlight">95</i>&nbsp;        }
+<i class="no-highlight">96</i>&nbsp;
+<i class="no-highlight">97</i>&nbsp;        var ubicacionBloque: Int = ceil(log2(cantidad)).toInt()
+<i class="no-highlight">98</i>&nbsp;
+<i class="no-highlight">99</i>&nbsp;        if (memoriaLibre[ubicacionBloque].size &gt; 0) {
+<i class="no-highlight">100</i>&nbsp;            var bloque: Bloque = memoriaLibre[ubicacionBloque].removeAt(0)
+<i class="no-highlight">101</i>&nbsp;            bloquesOcupados[nombre] = bloque 
+<i class="no-highlight">102</i>&nbsp;            return &quot;El bloque ${nombre} ha sido reservado.&quot;
+<i class="no-highlight">103</i>&nbsp;        }
+<i class="no-highlight">104</i>&nbsp;
+<i class="no-highlight">105</i>&nbsp;        var i: Int = ubicacionBloque + 1
+<i class="no-highlight">106</i>&nbsp;        while (i != memoriaLibre.size) {
+<i class="no-highlight">107</i>&nbsp;            if (memoriaLibre[i].size &gt; 0) {
+<i class="no-highlight">108</i>&nbsp;                break
+<i class="no-highlight">109</i>&nbsp;            }
+<i class="no-highlight">110</i>&nbsp;            i += 1
+<i class="no-highlight">111</i>&nbsp;        }
+<i class="no-highlight">112</i>&nbsp;        if (memoriaLibre.size == i) {
+<i class="no-highlight">113</i>&nbsp;            return &quot;No se puede resrevar el bloque ${nombre} ya que no hay memoria suficiente.&quot;
+<i class="no-highlight">114</i>&nbsp;        }
+<i class="no-highlight">115</i>&nbsp;
+<i class="no-highlight">116</i>&nbsp;        var dividirBloque: Bloque = memoriaLibre[i].removeAt(0)
+<i class="no-highlight">117</i>&nbsp;        while (i - 1 &gt;= ubicacionBloque) {
+<i class="no-highlight">118</i>&nbsp;            var bloquesDivididos: Pair&lt;Bloque, Bloque&gt; = dividirBloque.divisionBloque()
+<i class="no-highlight">119</i>&nbsp;            memoriaLibre[i - 1].add(bloquesDivididos.second)
+<i class="no-highlight">120</i>&nbsp;            dividirBloque = bloquesDivididos.first
+<i class="no-highlight">121</i>&nbsp;            i -= 1
+<i class="no-highlight">122</i>&nbsp;        }
+<i class="no-highlight">123</i>&nbsp;        bloquesOcupados[nombre] = dividirBloque
+<i class="no-highlight">124</i>&nbsp;
+<i class="no-highlight">125</i>&nbsp;        return &quot;El bloque ${nombre} ha sido reservado.&quot;
+<i class="no-highlight">126</i>&nbsp;    }
+<i class="no-highlight">127</i>&nbsp;
+<i class="no-highlight">128</i>&nbsp;    /* 
+<i class="no-highlight">129</i>&nbsp;     * Funcion que libera el bloque con nombre nombre y lo deja disponible para hacer uso de el y 
+<i class="no-highlight">130</i>&nbsp;     * poder almacenar otro bloque cuando sea requerido. En caso de que el nombre dado no exista entonces 
+<i class="no-highlight">131</i>&nbsp;     * no se libera ningun bloque.
+<i class="no-highlight">132</i>&nbsp;     */
+<i class="no-highlight">133</i>&nbsp;    fun liberar(nombre: String) : String {
+<i class="no-highlight">134</i>&nbsp;        var liberarBloque: Bloque? = bloquesOcupados.get(nombre)
+<i class="no-highlight">135</i>&nbsp;        if (liberarBloque == null) {
+<i class="no-highlight">136</i>&nbsp;            return &quot;No existe el bloque ${nombre}.&quot;
+<i class="no-highlight">137</i>&nbsp;        }
+<i class="no-highlight">138</i>&nbsp;        var ubicacionBloque: Int = ceil(log2(liberarBloque.capacidad)).toInt()
+<i class="no-highlight">139</i>&nbsp;        memoriaLibre[ubicacionBloque].add(liberarBloque)
+<i class="no-highlight">140</i>&nbsp;
+<i class="no-highlight">141</i>&nbsp;        unionBloque(liberarBloque)
+<i class="no-highlight">142</i>&nbsp;        bloquesOcupados.remove(nombre)
+<i class="no-highlight">143</i>&nbsp;        return &quot;El bloque con nombre ${nombre} ha sido liberado.&quot;
+<i class="no-highlight">144</i>&nbsp;    }
+<i class="no-highlight">145</i>&nbsp;
+<i class="no-highlight">146</i>&nbsp;    /* 
+<i class="no-highlight">147</i>&nbsp;     * Funcion auxiliar de la funcion liberar, la cual se encargara de unir el bloque que se esta liberando 
+<i class="no-highlight">148</i>&nbsp;     * con uno de los bloques libres
+<i class="no-highlight">149</i>&nbsp;     */
+<i class="no-highlight">150</i>&nbsp;    fun unionBloque(bloque: Bloque?) {
+<i class="no-highlight">151</i>&nbsp;        if (bloque == null) {
+<i class="no-highlight">152</i>&nbsp;            return
+<i class="no-highlight">153</i>&nbsp;        } else {
+<i class="no-highlight">154</i>&nbsp;            var ubicacionBloque: Int = ceil(log2(bloque.capacidad)).toInt()
+<i class="no-highlight">155</i>&nbsp;            var buddyNumber: Int = bloque.direccionInicial() / bloque.capacidad
+<i class="no-highlight">156</i>&nbsp;
+<i class="no-highlight">157</i>&nbsp;            var direccionBuddy: Int
+<i class="no-highlight">158</i>&nbsp;            if (buddyNumber % 2 != 0) {
+<i class="no-highlight">159</i>&nbsp;                direccionBuddy = bloque.direccionInicial() - bloque.capacidad
+<i class="no-highlight">160</i>&nbsp;            } else {
+<i class="no-highlight">161</i>&nbsp;                direccionBuddy = bloque.direccionInicial() + bloque.capacidad
+<i class="no-highlight">162</i>&nbsp;            }
+<i class="no-highlight">163</i>&nbsp;            var bloqueUnido: Bloque? = null
+<i class="no-highlight">164</i>&nbsp;            var listaBloques = memoriaLibre[ubicacionBloque]
+<i class="no-highlight">165</i>&nbsp;            for (bloques in 0..(listaBloques.size - 1)) {
+<i class="no-highlight">166</i>&nbsp;                if (listaBloques[bloques].direccionInicial() == direccionBuddy) {
+<i class="no-highlight">167</i>&nbsp;                    if (buddyNumber % 2 == 0) {
+<i class="no-highlight">168</i>&nbsp;                        bloqueUnido = Bloque(bloque.direccionInicial(), listaBloques[bloques].direccionFinal())
+<i class="no-highlight">169</i>&nbsp;                        memoriaLibre[ubicacionBloque + 1].add(bloqueUnido)
+<i class="no-highlight">170</i>&nbsp;                    } else {
+<i class="no-highlight">171</i>&nbsp;                        bloqueUnido = Bloque(listaBloques[bloques].direccionInicial(), bloque.direccionFinal())
+<i class="no-highlight">172</i>&nbsp;                        memoriaLibre[ubicacionBloque + 1].add(bloqueUnido)
+<i class="no-highlight">173</i>&nbsp;                    }
+<i class="no-highlight">174</i>&nbsp;                    memoriaLibre[ubicacionBloque].removeLast()
+<i class="no-highlight">175</i>&nbsp;                    memoriaLibre[ubicacionBloque].removeAt(bloques)
+<i class="no-highlight">176</i>&nbsp;                    break
+<i class="no-highlight">177</i>&nbsp;                }
+<i class="no-highlight">178</i>&nbsp;            }
+<i class="no-highlight">179</i>&nbsp;            unionBloque(bloqueUnido)
+<i class="no-highlight">180</i>&nbsp;        }
+<i class="no-highlight">181</i>&nbsp;    }
+<i class="no-highlight">182</i>&nbsp;
+<i class="no-highlight">183</i>&nbsp;    /* 
+<i class="no-highlight">184</i>&nbsp;     * Funcion que muestra como se encuentra el buddy system en el momento que el usuario lo pida,
+<i class="no-highlight">185</i>&nbsp;     * muestra los bloques libres y los bloques ocupados junto con sus datos.
+<i class="no-highlight">186</i>&nbsp;     */
+<i class="no-highlight">187</i>&nbsp;    fun mostrar() : String {
+<i class="no-highlight">188</i>&nbsp;        var bloquesLibres: MutableList&lt;Bloque&gt; = mutableListOf()
+<i class="no-highlight">189</i>&nbsp;        for (element in memoriaLibre) {
+<i class="no-highlight">190</i>&nbsp;            for (bloque in element) {
+<i class="no-highlight">191</i>&nbsp;                bloquesLibres.add(bloque)
+<i class="no-highlight">192</i>&nbsp;            }
+<i class="no-highlight">193</i>&nbsp;        }
+<i class="no-highlight">194</i>&nbsp;
+<i class="no-highlight">195</i>&nbsp;        bloquesLibres.sortedBy { it.direccionInicial() }
+<i class="no-highlight">196</i>&nbsp;        println(&quot;A continuacion se imprimen los bloques que se encuentran libres en la memoria:&quot;)
+<i class="no-highlight">197</i>&nbsp;        for (bloques in bloquesLibres) {
+<i class="no-highlight">198</i>&nbsp;            println(bloques.toString())
+<i class="no-highlight">199</i>&nbsp;        }
+<i class="no-highlight">200</i>&nbsp;        println(&quot;Ahora se imprimen los bloques que tienen datos con el formato &lt;nombre, bloque&gt;:&quot;)
+<i class="no-highlight">201</i>&nbsp;        bloquesOcupados.forEach { entry -&gt;
+<i class="no-highlight">202</i>&nbsp;            println(&quot;${entry.key} : ${entry.value}&quot;)
+<i class="no-highlight">203</i>&nbsp;        }
+<i class="no-highlight">204</i>&nbsp;        return &quot;&quot;
+<i class="no-highlight">205</i>&nbsp;    }
+<i class="no-highlight">206</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-06-11 12:41</div>
+</div>
+</body>
+</html>

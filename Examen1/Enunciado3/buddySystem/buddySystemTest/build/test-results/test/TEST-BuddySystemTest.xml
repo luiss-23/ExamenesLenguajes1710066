@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BuddySystemTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-10T05:09:23" hostname="lks-macbook-pro.local" time="0.02">
+<testsuite name="BuddySystemTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-11T16:41:10" hostname="lks-macbook-pro.local" time="0.046">
   <properties/>
-  <testcase name="testBuddySystem()" classname="BuddySystemTest" time="0.02"/>
+  <testcase name="testBuddySystem()" classname="BuddySystemTest" time="0.046"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

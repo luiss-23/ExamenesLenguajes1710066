@@ -1,0 +1,207 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > BuddyClientKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">&lt;empty package name&gt;</a>
+</div>
+
+<h1>Coverage Summary for Class: BuddyClientKt (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">BuddyClientKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/20)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/48)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/240)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;/* 
+<i class="no-highlight">2</i>&nbsp; * Funcion que retorna true si un string dado se puede llevar a entero, 
+<i class="no-highlight">3</i>&nbsp; * false en caso contrario.
+<i class="no-highlight">4</i>&nbsp; */
+<i class="no-highlight">5</i>&nbsp;fun isNumber(s: String): Boolean {
+<b class="nc"><i class="no-highlight">6</i>&nbsp;    return when(s.toIntOrNull())</b>
+<i class="no-highlight">7</i>&nbsp;    {
+<b class="nc"><i class="no-highlight">8</i>&nbsp;        null -&gt; false</b>
+<b class="nc"><i class="no-highlight">9</i>&nbsp;        else -&gt; true</b>
+<i class="no-highlight">10</i>&nbsp;    }
+<i class="no-highlight">11</i>&nbsp;}
+<i class="no-highlight">12</i>&nbsp;
+<i class="no-highlight">13</i>&nbsp;/* 
+<i class="no-highlight">14</i>&nbsp; * Cliente que simulara el buddy system implementado en BuddySystem.kt
+<i class="no-highlight">15</i>&nbsp; */
+<i class="no-highlight">16</i>&nbsp;fun main(args: Array&lt;String&gt;) {
+<b class="nc"><i class="no-highlight">17</i>&nbsp;    if (args.size != 1) {</b>
+<b class="nc"><i class="no-highlight">18</i>&nbsp;        println(&quot;Se debe introducir un solo argumento como entrada. La línea de comando debe ser:&quot;)</b>
+<b class="nc"><i class="no-highlight">19</i>&nbsp;        println(&quot;&gt;./BuddyClient.sh [n]&quot;)</b>
+<b class="nc"><i class="no-highlight">20</i>&nbsp;        println(&quot;Donde n es la cantidad de bloques que manejara el simulador.&quot;)</b>
+<i class="no-highlight">21</i>&nbsp;        return
+<i class="no-highlight">22</i>&nbsp;    }
+<b class="nc"><i class="no-highlight">23</i>&nbsp;    print(&quot;Introduzca su nombre: &quot;)</b>
+<b class="nc"><i class="no-highlight">24</i>&nbsp;    val usuario: String = readLine()!!</b>
+<b class="nc"><i class="no-highlight">25</i>&nbsp;    println(&quot;\nHola ${usuario}! Bienvenido al simulador del BuddySystem.&quot;)</b>
+<b class="nc"><i class="no-highlight">26</i>&nbsp;    println(&quot;Este simulador fue creado por el estudiante de Ing. en Computación Luis Blanco.&quot;)</b>
+<b class="nc"><i class="no-highlight">27</i>&nbsp;    println(&quot;Espero que te diviertas haciendo uso de él! Ahora te dejo los comandos y algunos ejemplos&quot;)</b>
+<b class="nc"><i class="no-highlight">28</i>&nbsp;    println(&quot;mediante los cuales puedes interactuar conmigo:&quot;)</b>
+<b class="nc"><i class="no-highlight">29</i>&nbsp;    println(&quot;RESERVAR &lt;nombre&gt; &lt;cantidad&gt; : RESERVAR lenguajesEsIncreible 5&quot;)</b>
+<b class="nc"><i class="no-highlight">30</i>&nbsp;    println(&quot;LIBERAR &lt;nombre&gt;             : LIBERAR lenguajesEsIncreible&quot;)</b>
+<b class="nc"><i class="no-highlight">31</i>&nbsp;    println(&quot;MOSTRAR                      : MOSTRAR&quot;)</b>
+<b class="nc"><i class="no-highlight">32</i>&nbsp;    println(&quot;SALIR                        : SALIR&quot;)</b>
+<i class="no-highlight">33</i>&nbsp;
+<b class="nc"><i class="no-highlight">34</i>&nbsp;    val buddySystem = BuddySystem(args[0].toInt())</b>
+<i class="no-highlight">35</i>&nbsp;
+<b class="nc"><i class="no-highlight">36</i>&nbsp;    while (true) {</b>
+<b class="nc"><i class="no-highlight">37</i>&nbsp;        print(&quot;Ingrese la instruccion a relizar: &quot;)</b>
+<b class="nc"><i class="no-highlight">38</i>&nbsp;        println()</b>
+<b class="nc"><i class="no-highlight">39</i>&nbsp;        val instruccion: String = readLine()!!</b>
+<b class="nc"><i class="no-highlight">40</i>&nbsp;        val patternR = Regex(&quot;^RESERVAR($| )&quot;)</b>
+<b class="nc"><i class="no-highlight">41</i>&nbsp;        val patternL = Regex(&quot;^LIBERAR($| )&quot;)</b>
+<b class="nc"><i class="no-highlight">42</i>&nbsp;        val patternM = Regex(&quot;^MOSTRAR($| )&quot;)</b>
+<b class="nc"><i class="no-highlight">43</i>&nbsp;        val patternS = Regex(&quot;^SALIR($| )&quot;)</b>
+<b class="nc"><i class="no-highlight">44</i>&nbsp;        if (instruccion == &quot;&quot;) {</b>
+<b class="nc"><i class="no-highlight">45</i>&nbsp;            continue</b>
+<i class="no-highlight">46</i>&nbsp;        }
+<i class="no-highlight">47</i>&nbsp;
+<b class="nc"><i class="no-highlight">48</i>&nbsp;        if (patternR.containsMatchIn(instruccion)){</b>
+<b class="nc"><i class="no-highlight">49</i>&nbsp;            val datosInstruccion: Array&lt;String&gt; = instruccion.split(&quot; &quot;).toTypedArray()</b>
+<b class="nc"><i class="no-highlight">50</i>&nbsp;            if (datosInstruccion.size != 3) {</b>
+<b class="nc"><i class="no-highlight">51</i>&nbsp;                println(&quot;La instrucción no se ha introducido correctamente, introduzcala nuevamente con el formato correcto.&quot;)</b>
+<b class="nc"><i class="no-highlight">52</i>&nbsp;                continue</b>
+<i class="no-highlight">53</i>&nbsp;            } else {
+<b class="nc"><i class="no-highlight">54</i>&nbsp;                if (isNumber(datosInstruccion[2])) {</b>
+<b class="nc"><i class="no-highlight">55</i>&nbsp;                    println(buddySystem.reservarEspacio(datosInstruccion[1], datosInstruccion[2].toInt()))</b>
+<i class="no-highlight">56</i>&nbsp;                } else {
+<b class="nc"><i class="no-highlight">57</i>&nbsp;                    println(&quot;Los datos de la instruccion no son correctos, introduzcala nuevamente con los datos correctos.&quot;)</b>
+<b class="nc"><i class="no-highlight">58</i>&nbsp;                    continue</b>
+<i class="no-highlight">59</i>&nbsp;                }
+<i class="no-highlight">60</i>&nbsp;            }
+<b class="nc"><i class="no-highlight">61</i>&nbsp;        } else if (patternL.containsMatchIn(instruccion)) {</b>
+<b class="nc"><i class="no-highlight">62</i>&nbsp;            val datosInstruccion: Array&lt;String&gt; = instruccion.split(&quot; &quot;).toTypedArray()</b>
+<b class="nc"><i class="no-highlight">63</i>&nbsp;            if (datosInstruccion.size != 2) {</b>
+<b class="nc"><i class="no-highlight">64</i>&nbsp;                println(&quot;La instrucción no se ha introducido correctamente, introduzcala nuevamente con el formato correcto.&quot;)</b>
+<b class="nc"><i class="no-highlight">65</i>&nbsp;                continue</b>
+<i class="no-highlight">66</i>&nbsp;            } else {
+<b class="nc"><i class="no-highlight">67</i>&nbsp;                println(buddySystem.liberar(datosInstruccion[1]))</b>
+<i class="no-highlight">68</i>&nbsp;            }
+<b class="nc"><i class="no-highlight">69</i>&nbsp;        } else if (patternM.containsMatchIn(instruccion)) {</b>
+<b class="nc"><i class="no-highlight">70</i>&nbsp;            buddySystem.mostrar()</b>
+<b class="nc"><i class="no-highlight">71</i>&nbsp;        } else if (patternS.containsMatchIn(instruccion)){</b>
+<b class="nc"><i class="no-highlight">72</i>&nbsp;            println(&quot;Espero que hayas pasado un buen rato en le simulador, espero verte pronto!&quot;)</b>
+<i class="no-highlight">73</i>&nbsp;            return
+<i class="no-highlight">74</i>&nbsp;        } else {
+<b class="nc"><i class="no-highlight">75</i>&nbsp;            println(&quot;No ha introducido una instrucción válida, inténtelo de nuevo.&quot;)</b>
+<i class="no-highlight">76</i>&nbsp;        }
+<i class="no-highlight">77</i>&nbsp;    }
+<i class="no-highlight">78</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-06-11 12:41</div>
+</div>
+</body>
+</html>

@@ -3,7 +3,6 @@ import org.junit.jupiter.api.Test
 
 internal class BuddySystemTest {
     private val buddyTest: BuddySystem = BuddySystem(70)
-
     @Test
     fun testBuddySystem() {
         val expectedOutput: String = "El bloque lenguajesEsIncreible ha sido reservado."
@@ -20,5 +19,8 @@ internal class BuddySystemTest {
 
         val expectedOutput5: String = "No existe el bloque WandaMaximoff."
         assertEquals(expectedOutput5, buddyTest.liberar("WandaMaximoff"))
+
+        val expectedOutput6: String = "No se puede resrevar el bloque WandaMaximoff ya que no hay memoria suficiente."
+        assertEquals(expectedOutput6, buddyTest.reservarEspacio("WandaMaximoff", 50))
     }
 }
