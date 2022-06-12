@@ -1,0 +1,17 @@
+{
+  "reports": [ 
+        {"ic": "/Users/luiscarlosblanco/Documents/lenguajesI/parciales/examen1/codigosExamen1/diagramaT/diagramaTTest/build/kover/test.ic"}
+    ], 
+  "html": "/Users/luiscarlosblanco/Documents/lenguajesI/parciales/examen1/codigosExamen1/diagramaT/diagramaTTest/build/reports/kover/project-html",
+  "modules": [
+    {
+      "output": [
+        "/Users/luiscarlosblanco/Documents/lenguajesI/parciales/examen1/codigosExamen1/diagramaT/diagramaTTest/build/classes/kotlin/main"
+      ],
+      "sources": [
+        "/Users/luiscarlosblanco/Documents/lenguajesI/parciales/examen1/codigosExamen1/diagramaT/diagramaTTest/src/main/kotlin",
+        "/Users/luiscarlosblanco/Documents/lenguajesI/parciales/examen1/codigosExamen1/diagramaT/diagramaTTest/src/main/resources"
+      ]
+    }
+  ]
+}

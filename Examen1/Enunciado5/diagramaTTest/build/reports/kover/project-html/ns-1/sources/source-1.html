@@ -1,0 +1,227 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > DiagramaT</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">&lt;empty package name&gt;</a>
+</div>
+
+<h1>Coverage Summary for Class: DiagramaT (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">DiagramaT</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    47.1%
+  </span>
+  <span class="absValue">
+    (16/34)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    58.7%
+  </span>
+  <span class="absValue">
+    (27/46)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    60.6%
+  </span>
+  <span class="absValue">
+    (304/502)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;/* 
+<i class="no-highlight">2</i>&nbsp; * Programa de respuesta a pregunta 5 del examen 1
+<i class="no-highlight">3</i>&nbsp; * Autor: Luis Blanco
+<i class="no-highlight">4</i>&nbsp; * Carné: 1710066 */
+<i class="no-highlight">5</i>&nbsp;
+<i class="no-highlight">6</i>&nbsp;/* 
+<i class="no-highlight">7</i>&nbsp; * Implementacion de clase DiagramaT la cual tendrá funciones a usar en un simulador en el que se verá si un
+<i class="no-highlight">8</i>&nbsp; * definido un lenguaje local, programas en distinto lenguajes, traductores de lenguajes e interpretes
+<i class="no-highlight">9</i>&nbsp; * se puede ejecutar un programa en una máquina
+<i class="no-highlight">10</i>&nbsp; */
+<b class="fc"><i class="no-highlight">11</i>&nbsp;public class DiagramaT(l: String) {</b>
+<b class="fc"><i class="no-highlight">12</i>&nbsp;    var programas: MutableMap&lt;String, String&gt; = mutableMapOf()</b>
+<b class="fc"><i class="no-highlight">13</i>&nbsp;    var interprete: MutableMap&lt;String, String&gt; = mutableMapOf()</b>
+<b class="fc"><i class="no-highlight">14</i>&nbsp;    var traductor: MutableMap&lt;String, Pair&lt;String, String&gt;&gt; = mutableMapOf()</b>
+<i class="no-highlight">15</i>&nbsp;
+<b class="fc"><i class="no-highlight">16</i>&nbsp;    var local: String = l</b>
+<i class="no-highlight">17</i>&nbsp;
+<i class="no-highlight">18</i>&nbsp;    /*
+<i class="no-highlight">19</i>&nbsp;     * Funcion que agrega datos al mapa correspondiente dependiendo de si la instruccion es
+<i class="no-highlight">20</i>&nbsp;     * DEFINIR [PROGRAMA, INTERPRETE, TRADUCTOR] 
+<i class="no-highlight">21</i>&nbsp;     */
+<i class="no-highlight">22</i>&nbsp;    fun definir(datos: MutableList&lt;String&gt;) : String {
+<b class="fc"><i class="no-highlight">23</i>&nbsp;        if (datos[1] == &quot;PROGRAMA&quot;) {</b>
+<b class="fc"><i class="no-highlight">24</i>&nbsp;            programas[datos[2]] = datos[3]</b>
+<b class="fc"><i class="no-highlight">25</i>&nbsp;            return &quot;Se definió el programa &#39;${datos[2]}&#39;, ejecutable en &#39;${datos[3]}&#39;&quot;</b>
+<b class="fc"><i class="no-highlight">26</i>&nbsp;        } else if (datos[1] == &quot;INTERPRETE&quot;) {</b>
+<b class="fc"><i class="no-highlight">27</i>&nbsp;            interprete[datos[3]] = datos[2]</b>
+<b class="fc"><i class="no-highlight">28</i>&nbsp;            return &quot;Se definió un intérprete para &#39;${datos[3]}&#39;, escrito en &#39;${datos[2]}&#39;&quot;</b>
+<b class="pc"><i class="no-highlight">29</i>&nbsp;        } else if (datos[1] == &quot;TRADUCTOR&quot;) {</b>
+<b class="fc"><i class="no-highlight">30</i>&nbsp;            traductor[datos[3]] = Pair(datos[2], datos[4])</b>
+<b class="fc"><i class="no-highlight">31</i>&nbsp;            return &quot;Se definió un traductor de &#39;${datos[3]}&#39; hacia &#39;${datos[4]}&#39;, escrito en &#39;${datos[2]}&#39;&quot;</b>
+<i class="no-highlight">32</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">33</i>&nbsp;        return &quot;La instrucción no es válida, ingrese una instrucción correcta.&quot;</b>
+<i class="no-highlight">34</i>&nbsp;    }
+<i class="no-highlight">35</i>&nbsp;
+<i class="no-highlight">36</i>&nbsp;    /* 
+<i class="no-highlight">37</i>&nbsp;     * Funcion que verifica si un programa dado se puede ejecutar en la maquina
+<i class="no-highlight">38</i>&nbsp;     */
+<i class="no-highlight">39</i>&nbsp;    fun ejecutar(p: String) : String {
+<b class="fc"><i class="no-highlight">40</i>&nbsp;        if (programas.keys.contains(p)) {</b>
+<b class="pc"><i class="no-highlight">41</i>&nbsp;            if (programas[p] == local) {</b>
+<b class="fc"><i class="no-highlight">42</i>&nbsp;                return &quot;Si, es posible ejecutar el programa &#39;${p}&#39;&quot;</b>
+<b class="nc"><i class="no-highlight">43</i>&nbsp;            } else if (interprete.keys.contains(programas[p])) {</b>
+<b class="nc"><i class="no-highlight">44</i>&nbsp;                if (interprete[programas[p]] == local) {</b>
+<b class="nc"><i class="no-highlight">45</i>&nbsp;                    return &quot;Si, es posible ejecutar el programa &#39;${p}&#39;&quot;</b>
+<i class="no-highlight">46</i>&nbsp;                } else {
+<b class="nc"><i class="no-highlight">47</i>&nbsp;                    buscarTraductor(programas[p]!!, p)</b>
+<i class="no-highlight">48</i>&nbsp;                }
+<i class="no-highlight">49</i>&nbsp;            } else {
+<b class="nc"><i class="no-highlight">50</i>&nbsp;                buscarTraductor(programas[p]!!, p)</b>
+<i class="no-highlight">51</i>&nbsp;            }
+<i class="no-highlight">52</i>&nbsp;        } else {
+<b class="fc"><i class="no-highlight">53</i>&nbsp;            return &quot;El programa &#39;${p}&#39; no está definido.&quot;</b>
+<i class="no-highlight">54</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">55</i>&nbsp;        return &quot;&quot;</b>
+<i class="no-highlight">56</i>&nbsp;    }
+<i class="no-highlight">57</i>&nbsp;
+<i class="no-highlight">58</i>&nbsp;    /* 
+<i class="no-highlight">59</i>&nbsp;     * Funcion auxiliar de ejecutar que busca los traductores o interpretes de un lenguaje para un programa,
+<i class="no-highlight">60</i>&nbsp;     * ambos datos son dados como argumento de entrada.
+<i class="no-highlight">61</i>&nbsp;     */
+<i class="no-highlight">62</i>&nbsp;    fun buscarTraductor(l: String, p: String) : String {
+<b class="fc"><i class="no-highlight">63</i>&nbsp;        if (traductor.keys.contains(l)) {</b>
+<b class="pc"><i class="no-highlight">64</i>&nbsp;            if (traductor[l]!!.first == local) {</b>
+<b class="nc"><i class="no-highlight">65</i>&nbsp;                if (traductor[l]!!.second == local) {</b>
+<b class="nc"><i class="no-highlight">66</i>&nbsp;                    return &quot;Si, es posible ejecutar el programa &#39;${p}&#39;&quot;</b>
+<b class="nc"><i class="no-highlight">67</i>&nbsp;                } else if (interprete.keys.contains(traductor[l]!!.second)) {</b>
+<b class="nc"><i class="no-highlight">68</i>&nbsp;                    if (interprete[traductor[l]!!.second] == local) {</b>
+<b class="nc"><i class="no-highlight">69</i>&nbsp;                        print(&quot;Si, es posible ejecutar el programa &#39;${p}&#39;&quot;)</b>
+<i class="no-highlight">70</i>&nbsp;                    } else {
+<b class="nc"><i class="no-highlight">71</i>&nbsp;                        return &quot;No es posible ejecutar el programa &#39;${p}&#39;&quot;</b>
+<i class="no-highlight">72</i>&nbsp;                    }
+<i class="no-highlight">73</i>&nbsp;                } else {
+<b class="nc"><i class="no-highlight">74</i>&nbsp;                    buscarTraductor(traductor[l]!!.second, p)</b>
+<i class="no-highlight">75</i>&nbsp;                }
+<b class="pc"><i class="no-highlight">76</i>&nbsp;            } else if (interprete.keys.contains(traductor[l]!!.first)) {</b>
+<b class="pc"><i class="no-highlight">77</i>&nbsp;                if (interprete[traductor[l]!!.first] == local) {</b>
+<b class="pc"><i class="no-highlight">78</i>&nbsp;                    if (traductor[l]!!.second == local) {</b>
+<b class="nc"><i class="no-highlight">79</i>&nbsp;                        return &quot;Si, es posible ejecutar el programa &#39;${p}&#39;&quot;</b>
+<b class="pc"><i class="no-highlight">80</i>&nbsp;                    } else if (interprete.keys.contains(traductor[l]!!.second)) {</b>
+<b class="pc"><i class="no-highlight">81</i>&nbsp;                        if (interprete[traductor[l]!!.second] == local) {</b>
+<b class="fc"><i class="no-highlight">82</i>&nbsp;                            return &quot;Si, es posible ejecutar el programa &#39;${p}&#39;&quot;</b>
+<i class="no-highlight">83</i>&nbsp;                        } else {
+<b class="nc"><i class="no-highlight">84</i>&nbsp;                            buscarTraductor(traductor[l]!!.second, p)</b>
+<i class="no-highlight">85</i>&nbsp;                        }
+<i class="no-highlight">86</i>&nbsp;                    } else {
+<b class="nc"><i class="no-highlight">87</i>&nbsp;                        buscarTraductor(traductor[l]!!.second, p)</b>
+<i class="no-highlight">88</i>&nbsp;                    }
+<i class="no-highlight">89</i>&nbsp;                }
+<i class="no-highlight">90</i>&nbsp;            } else {
+<b class="nc"><i class="no-highlight">91</i>&nbsp;                buscarTraductor(traductor[l]!!.first, p)</b>
+<i class="no-highlight">92</i>&nbsp;            }
+<i class="no-highlight">93</i>&nbsp;        } else {
+<b class="fc"><i class="no-highlight">94</i>&nbsp;            return &quot;No es posible ejecutar el programa &#39;${p}&#39;&quot;</b>
+<i class="no-highlight">95</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">96</i>&nbsp;        return &quot;&quot;</b>
+<i class="no-highlight">97</i>&nbsp;    }
+<i class="no-highlight">98</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-06-11 22:35</div>
+</div>
+</body>
+</html>

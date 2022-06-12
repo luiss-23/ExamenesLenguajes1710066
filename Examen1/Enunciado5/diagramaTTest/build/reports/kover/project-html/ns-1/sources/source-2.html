@@ -1,0 +1,218 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > DiagramaTClienteKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">&lt;empty package name&gt;</a>
+</div>
+
+<h1>Coverage Summary for Class: DiagramaTClienteKt (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">DiagramaTClienteKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/26)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/60)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/288)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;/*
+<i class="no-highlight">2</i>&nbsp; * Programa cliente encargado de verificar el funcionamiento del simulador del Diagrama T para saber
+<i class="no-highlight">3</i>&nbsp; * si un programa es ejecutable en una maquina. 
+<i class="no-highlight">4</i>&nbsp; */
+<i class="no-highlight">5</i>&nbsp;
+<i class="no-highlight">6</i>&nbsp;fun main(args: Array&lt;String&gt;) {
+<b class="nc"><i class="no-highlight">7</i>&nbsp;    if (args.size != 0) {</b>
+<b class="nc"><i class="no-highlight">8</i>&nbsp;        println(&quot;No se deben introducir argumentos de entrada. La línea de comando debe ser:&quot;)</b>
+<b class="nc"><i class="no-highlight">9</i>&nbsp;        println(&quot;&gt;./DiagramaT.sh&quot;)</b>
+<i class="no-highlight">10</i>&nbsp;        return
+<i class="no-highlight">11</i>&nbsp;    }
+<b class="nc"><i class="no-highlight">12</i>&nbsp;    print(&quot;Introduzca su nombre: &quot;)</b>
+<b class="nc"><i class="no-highlight">13</i>&nbsp;    val usuario: String = readLine()!!</b>
+<b class="nc"><i class="no-highlight">14</i>&nbsp;    println(&quot;\nHola ${usuario}! Bienvenido al simulador del Diagrama T.&quot;)</b>
+<b class="nc"><i class="no-highlight">15</i>&nbsp;    println(&quot;Este simulador fue creado por el estudiante de Ing. en Computación Luis Blanco.&quot;)</b>
+<b class="nc"><i class="no-highlight">16</i>&nbsp;    println(&quot;Espero que te diviertas haciendo uso de él! Ahora te dejo los comandos y algunos ejemplos&quot;)</b>
+<b class="nc"><i class="no-highlight">17</i>&nbsp;    println(&quot;mediante los cuales puedes interactuar conmigo:&quot;)</b>
+<b class="nc"><i class="no-highlight">18</i>&nbsp;    println(&quot;Se pueden manejar programas, traductores e interpretes de la siguiente forma:&quot;)</b>
+<b class="nc"><i class="no-highlight">19</i>&nbsp;    println(&quot;PROGRAMA &lt;nombre&gt; &lt;lenguaje&gt;&quot;)</b>
+<b class="nc"><i class="no-highlight">20</i>&nbsp;    println(&quot;INTERPRETE &lt;lenguaje_base&gt; &lt;lenguaje&gt;&quot;)</b>
+<b class="nc"><i class="no-highlight">21</i>&nbsp;    println(&quot;TRADUCTOR &lt;lenguaje_base&gt; &lt;lenguaje_origen&gt; &lt;lenguaje_destino&gt;&quot;)</b>
+<b class="nc"><i class="no-highlight">22</i>&nbsp;    println(&quot;Se puede hacer uso de las siguientes instrucciones:&quot;)</b>
+<b class="nc"><i class="no-highlight">23</i>&nbsp;    println(&quot;DEFINIR &lt;tipo&gt; [&lt;argumentos&gt;] : DEFINIR PROGRAMA kateBishop Python3&quot;)</b>
+<b class="nc"><i class="no-highlight">24</i>&nbsp;    println(&quot;EJECUTABLE &lt;nombre&gt;           : EJECUTABLE kateBishop&quot;)</b>
+<b class="nc"><i class="no-highlight">25</i>&nbsp;    println(&quot;SALIR                         : SALIR&quot;)</b>
+<i class="no-highlight">26</i>&nbsp;
+<b class="nc"><i class="no-highlight">27</i>&nbsp;    print(&quot;Introduza el lenguaje local que ejecutara la máquina: &quot;)</b>
+<b class="nc"><i class="no-highlight">28</i>&nbsp;    val lenguajeLocal: String = readLine()!!</b>
+<b class="nc"><i class="no-highlight">29</i>&nbsp;    println()</b>
+<b class="nc"><i class="no-highlight">30</i>&nbsp;    if (lenguajeLocal == &quot;&quot;) {</b>
+<b class="nc"><i class="no-highlight">31</i>&nbsp;        println(&quot;Se debe introducir un lenguaje local para la maquina.&quot;)</b>
+<i class="no-highlight">32</i>&nbsp;        return
+<i class="no-highlight">33</i>&nbsp;    }
+<b class="nc"><i class="no-highlight">34</i>&nbsp;    val diagramaT = DiagramaT(lenguajeLocal)</b>
+<i class="no-highlight">35</i>&nbsp;
+<b class="nc"><i class="no-highlight">36</i>&nbsp;    while (true) {</b>
+<b class="nc"><i class="no-highlight">37</i>&nbsp;        print(&quot;Ingrese la instruccion a relizar: &quot;)</b>
+<b class="nc"><i class="no-highlight">38</i>&nbsp;        println()</b>
+<b class="nc"><i class="no-highlight">39</i>&nbsp;        val instruccion: String = readLine()!!</b>
+<b class="nc"><i class="no-highlight">40</i>&nbsp;        val patternD = Regex(&quot;^DEFINIR($| )&quot;)</b>
+<b class="nc"><i class="no-highlight">41</i>&nbsp;        val patternE = Regex(&quot;^EJECUTABLE($| )&quot;)</b>
+<b class="nc"><i class="no-highlight">42</i>&nbsp;        val patternS = Regex(&quot;^SALIR($| )&quot;)</b>
+<b class="nc"><i class="no-highlight">43</i>&nbsp;        if (instruccion == &quot;&quot;) {</b>
+<b class="nc"><i class="no-highlight">44</i>&nbsp;            continue</b>
+<i class="no-highlight">45</i>&nbsp;        }
+<i class="no-highlight">46</i>&nbsp;
+<b class="nc"><i class="no-highlight">47</i>&nbsp;        if (patternD.containsMatchIn(instruccion)){</b>
+<b class="nc"><i class="no-highlight">48</i>&nbsp;            val datosInstruccion: Array&lt;String&gt; = instruccion.split(&quot; &quot;).toTypedArray()</b>
+<b class="nc"><i class="no-highlight">49</i>&nbsp;            if (datosInstruccion[1] == &quot;PROGRAMA&quot;) {</b>
+<b class="nc"><i class="no-highlight">50</i>&nbsp;                if (datosInstruccion.size != 4) {</b>
+<b class="nc"><i class="no-highlight">51</i>&nbsp;                    println(&quot;La instrucción no se ha introducido correctamente, introduzcala nuevamente con el formato correcto.&quot;)</b>
+<b class="nc"><i class="no-highlight">52</i>&nbsp;                    continue</b>
+<i class="no-highlight">53</i>&nbsp;                } else {
+<b class="nc"><i class="no-highlight">54</i>&nbsp;                    println(diagramaT.definir(datosInstruccion.toMutableList()))</b>
+<i class="no-highlight">55</i>&nbsp;                }
+<b class="nc"><i class="no-highlight">56</i>&nbsp;            } else if (datosInstruccion[1] == &quot;INTERPRETE&quot;) {</b>
+<b class="nc"><i class="no-highlight">57</i>&nbsp;                if (datosInstruccion.size != 4) {</b>
+<b class="nc"><i class="no-highlight">58</i>&nbsp;                    println(&quot;La instrucción no se ha introducido correctamente, introduzcala nuevamente con el formato correcto.&quot;)</b>
+<b class="nc"><i class="no-highlight">59</i>&nbsp;                    continue</b>
+<i class="no-highlight">60</i>&nbsp;                } else {
+<b class="nc"><i class="no-highlight">61</i>&nbsp;                    println(diagramaT.definir(datosInstruccion.toMutableList()))</b>
+<i class="no-highlight">62</i>&nbsp;                }
+<b class="nc"><i class="no-highlight">63</i>&nbsp;            } else if (datosInstruccion[1] == &quot;TRADUCTOR&quot;) {</b>
+<b class="nc"><i class="no-highlight">64</i>&nbsp;                if (datosInstruccion.size != 5) {</b>
+<b class="nc"><i class="no-highlight">65</i>&nbsp;                    println(&quot;La instrucción no se ha introducido correctamente, introduzcala nuevamente con el formato correcto.&quot;)</b>
+<b class="nc"><i class="no-highlight">66</i>&nbsp;                    continue</b>
+<i class="no-highlight">67</i>&nbsp;                } else {
+<b class="nc"><i class="no-highlight">68</i>&nbsp;                    println(diagramaT.definir(datosInstruccion.toMutableList()))</b>
+<i class="no-highlight">69</i>&nbsp;                }
+<i class="no-highlight">70</i>&nbsp;            } else { 
+<b class="nc"><i class="no-highlight">71</i>&nbsp;                println(&quot;Solamente se pueden definir PROGRAMAS, TRADUCTORES o INTERPRETES, intentelo de nuevo.&quot;)</b>
+<b class="nc"><i class="no-highlight">72</i>&nbsp;                continue</b>
+<i class="no-highlight">73</i>&nbsp;            }
+<b class="nc"><i class="no-highlight">74</i>&nbsp;        } else if (patternE.containsMatchIn(instruccion)) {</b>
+<b class="nc"><i class="no-highlight">75</i>&nbsp;            val datosInstruccion: Array&lt;String&gt; = instruccion.split(&quot; &quot;).toTypedArray()</b>
+<b class="nc"><i class="no-highlight">76</i>&nbsp;            if (datosInstruccion.size != 2) {</b>
+<b class="nc"><i class="no-highlight">77</i>&nbsp;                println(&quot;La instrucción no se ha introducido correctamente, introduzcala nuevamente con el formato correcto.&quot;)</b>
+<b class="nc"><i class="no-highlight">78</i>&nbsp;                continue</b>
+<i class="no-highlight">79</i>&nbsp;            } else {
+<b class="nc"><i class="no-highlight">80</i>&nbsp;                println(diagramaT.ejecutar(datosInstruccion[1]))</b>
+<i class="no-highlight">81</i>&nbsp;            }
+<b class="nc"><i class="no-highlight">82</i>&nbsp;        } else if (patternS.containsMatchIn(instruccion)) {</b>
+<b class="nc"><i class="no-highlight">83</i>&nbsp;            println(&quot;Espero te hayas divertido, regresa pronto!&quot;)</b>
+<i class="no-highlight">84</i>&nbsp;            return
+<i class="no-highlight">85</i>&nbsp;        } else {
+<b class="nc"><i class="no-highlight">86</i>&nbsp;            println(&quot;No ha introducido una instrucción válida, inténtelo de nuevo.&quot;)</b>
+<i class="no-highlight">87</i>&nbsp;        }
+<i class="no-highlight">88</i>&nbsp;    }
+<i class="no-highlight">89</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-06-11 22:35</div>
+</div>
+</body>
+</html>
