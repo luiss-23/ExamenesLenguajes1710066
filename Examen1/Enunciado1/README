@@ -1,0 +1,33 @@
+En esta carpeta estan los archivos correspondientes a la pregunta 1 del examen 1,
+son dos archivos, los cuales se describiran a continuacion:
+
+- El primer archivo contiene el programa correspondiente para realizar
+   la potenciacion modulada.
+- El segundo archivo el programa correspondiente para realizar la multiplicacion
+    de dos matrices.
+
+Para realizar la ejecucion de los archivos se debe tener instalado clisp, el cual puede 
+ser instalado de varias formas dependiendo del OS que se este utilizando.
+
+En MacOS se puede instalar de las siguientes dos formas:
+- Se debe tener instalado la herramineta homebrew, en caso de que no se tenga se puede
+    instalar siguiendo los pasos del siguiente link: https://brew.sh/index_es
+    Luego se debe escribir la siguiente linea en la terminal:
+    $ brew install clisp
+    
+- La segunda forma de instalar en MacOS es usando la herramienta MacPorts, similar a 
+    hombrew, debe tenerse instalado y en caso de que no se tenga se puede instalar siguiendo
+    las instrucciones en el siguiente link: https://www.macports.org/install.php
+    Luego se debe escribir la siguiente linea en la terminal:
+    $ sudo port install clisp
+
+En Linux puede ser instalado de la siguiente forma:
+- Se debe ejecutar la siguiente linea de codigo:
+    $ sudo apt install clisp
+
+Para instalar en Windows se deben seguir las instrucciones del siguiente enlace:
+    http://www.iqool.de/lispstick.html#org5467d04
+
+Para ejecutar, se debe escribir la siguiente linea:
+    $ clisp <programa>
+    donde <programa> es el nombre de alguno de los programas definidos en la carpeta.

@@ -1,0 +1,40 @@
+En esta carpeta se encuentran los archivos correspondientes a la pregunta 5 del 
+examen 1
+
+Para ejecutar los programas se debe tener instalado kotlin y se estará usando la 
+JVM para la ejecucion. Se debe tener instalado jdk y kotlin.
+
+En MacOS se puede instalar de las siguientes dos formas:
+- Se debe tener instalado la herramineta homebrew, en caso de que no se tenga se puede
+    instalar siguiendo los pasos del siguiente link: https://brew.sh/index_es
+    Luego se debe escribir la siguiente linea en la terminal:
+    $ brew install kotlin
+    $ brew install openjdk
+    
+- La segunda forma de instalar en MacOS es usando la herramienta MacPorts, similar a 
+    hombrew, debe tenerse instalado y en caso de que no se tenga se puede instalar siguiendo
+    las instrucciones en el siguiente link: https://www.macports.org/install.php
+    Luego se debe escribir la siguiente linea en la terminal:
+    $ sudo port install kotlin
+    $ sudo port install openjdk17
+
+En Linux puede ser instalado de la siguiente forma:
+- Se pueden seguir los pasos del siguiente enlace desde el 1 al 3:
+    https://www.geeksforgeeks.org/how-to-install-kotlin-on-linux/
+
+Para Windows se deben seguir los pasos del siguiente enlace:
+    https://otfried.org/courses/cs109/project-install.html
+
+Luego de teners instalado todo lo anterior, se debe ubicar en la carpeta que contiene los archivos
+y ejecutar los siguientes comandos en la terminal:
+    $ make
+    $ ./DiagramaT.sh
+
+Para realizar los test se uso la herramienta JUnit y Kover para la cobertura del código. Para realizar los test
+se hizo uso del IDE de IntelliJ IDEA CE. Para realizar los test debe instalar ese IDE y abrir la carpeta diagramaTTest
+como proyecto, luego debe abrir la pestaña Gradle que se encuentra en la esquina superior izquierda y seguir la siguiente ruta:
+Tasks/verification/test para realizar el test y Tasks/verification/koverHtmlReport para obtener el reporte de los test en un archivo
+HTML, se le dirá en que ubicación se guardará el archivo creado.
+
+Para instalar IntelliJ IDEA CE se debe dirigir al siguiente enlace y seguir los pasos:
+https://www.jetbrains.com/es-es/idea/download
