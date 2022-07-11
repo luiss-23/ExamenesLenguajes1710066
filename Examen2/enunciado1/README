@@ -1,0 +1,28 @@
+En esta carpeta se encuentran los programas para responder la pregunta 1 del 
+examen 2
+
+Para ejecutar el codigo se debe tener instalado Go el cual puede ser instalado de la
+siguiente manera:
+
+En MacOS se puede instalar de las siguientes dos formas:
+- Se debe tener instalado la herramineta homebrew, en caso de que no se tenga se puede
+    instalar siguiendo los pasos del siguiente link: https://brew.sh/index_es
+    Luego se debe escribir la siguiente linea en la terminal:
+    $ brew install go
+    
+- La segunda forma de instalar en MacOS es usando la herramienta MacPorts, similar a 
+    hombrew, debe tenerse instalado y en caso de que no se tenga se puede instalar siguiendo
+    las instrucciones en el siguiente link: https://www.macports.org/install.php
+    Luego se debe escribir la siguiente linea en la terminal:
+    $ sudo port install go
+
+En Linux puede ser instalado de la siguiente forma:
+- Se pueden seguir los pasos del siguiente enlace:
+    https://go.dev/doc/install
+Para Windows se deben seguir los pasos del siguiente enlace:
+    https://go.dev/doc/install
+
+
+Luego para ejecutar el codigo se debe escribir la siguiente linea de codigo:
+    $ go run Church.go
+    $ go run BinaryTree.go

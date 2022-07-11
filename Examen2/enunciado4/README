@@ -1,0 +1,38 @@
+En esta carpeta se encuentran los programas para responder la pregunta 4 del 
+examen 2
+
+Para ejecutar el codigo se debe tener instalado Python3 el cual puede ser instalado de la
+siguiente manera:
+
+En MacOS se puede instalar de las siguientes dos formas:
+- Se debe tener instalado la herramineta homebrew, en caso de que no se tenga se puede
+    instalar siguiendo los pasos del siguiente link: https://brew.sh/index_es
+    Luego se debe escribir la siguiente linea en la terminal:
+    $ brew install python@3.9
+    
+- La segunda forma de instalar en MacOS es usando la herramienta MacPorts, similar a 
+    hombrew, debe tenerse instalado y en caso de que no se tenga se puede instalar siguiendo
+    las instrucciones en el siguiente link: https://www.macports.org/install.php
+    Luego se debe escribir la siguiente linea en la terminal:
+    $ sudo port install python39
+
+En Linux puede ser instalado de la siguiente forma:
+- Se pueden seguir los pasos del siguiente enlace:
+    https://www.scaler.com/topics/python/install-python-on-linux/#two-ways-to-install-python-on-linux
+
+Para Windows se deben seguir los pasos del siguiente enlace:
+    https://www.python.org/downloads/
+
+
+Luego para ejecutar el codigo se debe escribir la siguiente linea de codigo:
+    $ python3 PruebasF.py
+
+Para hacer los test y cobertura del codigo se utilizaron dos herramientas llamadas pytest y coverage
+las cuales pueden ser instaladas usando:
+    $ pip install pytest
+    $ pip install coverage
+
+y se pueden ejecutar los test escribiendo el siguiente comando:
+    $ coverage run -m pytest
+    $ coverage report 
+para obtener los reportes.
