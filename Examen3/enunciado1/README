@@ -1,0 +1,33 @@
+En esta carpeta se encuentran los archivos correspondientes a la pregunta 1 del 
+examen 3
+
+Para ejecutar los programas se debe tener instalado kotlin y se estará usando la 
+JVM para la ejecucion. Se debe tener instalado jdk y kotlin.
+
+En MacOS se puede instalar de las siguientes dos formas:
+- Se debe tener instalado la herramineta homebrew, en caso de que no se tenga se puede
+    instalar siguiendo los pasos del siguiente link: https://brew.sh/index_es
+    Luego se debe escribir la siguiente linea en la terminal:
+    $ brew install kotlin
+    $ brew install openjdk
+    
+- La segunda forma de instalar en MacOS es usando la herramienta MacPorts, similar a 
+    hombrew, debe tenerse instalado y en caso de que no se tenga se puede instalar siguiendo
+    las instrucciones en el siguiente link: https://www.macports.org/install.php
+    Luego se debe escribir la siguiente linea en la terminal:
+    $ sudo port install kotlin
+    $ sudo port install openjdk17
+
+En Linux puede ser instalado de la siguiente forma:
+- Se pueden seguir los pasos del siguiente enlace desde el 1 al 3:
+    https://www.geeksforgeeks.org/how-to-install-kotlin-on-linux/
+
+Para Windows se deben seguir los pasos del siguiente enlace:
+    https://otfried.org/courses/cs109/project-install.html
+
+Luego de teners instalado todo lo anterior, se debe ubicar en la carpeta que contiene los archivos
+y ejecutar los siguientes comandos en la terminal:
+    $ make
+    $ ./Cliente.sh para b_i
+    $ ./runCliente.sh para b_ii
+    

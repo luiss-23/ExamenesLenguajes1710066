@@ -1,0 +1,12 @@
+En esta carpeta se encuentran los archivos correspondientes a la pregunta 2 del 
+examen 3
+
+Para ejecutar los programas se debe tener instalado Java y se estará usando la 
+JVM para la ejecucion. Se debe tener instalado jdk y Java.
+
+Luego de teners instalado todo lo anterior, se debe ubicar en la carpeta que contiene los archivos
+y ejecutar los siguientes comandos en la terminal:
+    $ javac Main.java
+    $ java Main
+    donde n es la cantidad de bloques con los que se quiere inicializar el simulador.
+

@@ -1,0 +1,31 @@
+fun main() {
+    var pilaMarvel: Pila<String> = Pila()
+
+    println("***Ejemplo de manejo de Pila***")
+    println("La pila está vacía? ${pilaMarvel.vacio()}")
+    println("Se agrega un elemento y se muestra el estado de la pila")
+    pilaMarvel.agregar("Wanda Maximoff")
+    print(pilaMarvel.toString())
+    println("La pila está vacía? ${pilaMarvel.vacio()}")
+    println("Se agrega un elemento y se muestra el estado de la pila")
+    pilaMarvel.agregar("Kate Bishop")
+    print(pilaMarvel.toString())
+    println("Se remueve el elemento ${pilaMarvel.remover()} y se muestra el estado de la pila")
+    print(pilaMarvel.toString())
+
+    println()
+    println()
+    var colaPeliculas: Cola<String> = Cola()
+
+    println("***Ejemplo de manejo de Cola***")
+    println("La cola está vacía? ${colaPeliculas.vacio()}")
+    println("Se agrega un elemento y se muestra el estado de la cola")
+    colaPeliculas.agregar("Iron Man 1")
+    println(colaPeliculas.toString())
+    println("La cola está vacía? ${colaPeliculas.vacio()}")
+    println("Se agrega un elemento y se muestra el estado de la cola")
+    colaPeliculas.agregar("Iron Man 2")
+    println(colaPeliculas.toString())
+    println("Se remueve el elemento ${colaPeliculas.remover()} y se muestra el estado de la cola")
+    print(colaPeliculas.toString())
+}
